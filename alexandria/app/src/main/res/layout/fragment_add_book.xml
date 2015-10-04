@@ -10,16 +10,17 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:id="@+id/eancontainer"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_margin="20dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true">
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:inputType="number"
                 android:minEms="@integer/ean_width"
                 android:id="@+id/ean"
@@ -27,11 +28,13 @@
                 android:maxLength="@integer/ean_size"
                 android:maxLines="1"
                 android:hint="@string/input_hint"
-                android:paddingRight="20dp"/>
+                android:paddingRight="20dp"
+                android:paddingEnd="20dp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="@string/scan_button"
                 android:id="@+id/scan_button"/>
 
