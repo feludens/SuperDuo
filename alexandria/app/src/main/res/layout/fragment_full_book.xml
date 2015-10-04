@@ -4,21 +4,21 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <ScrollView android:layout_width="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:fillViewport="false"
                     android:layout_weight="1">
 
             <RelativeLayout
                 android:orientation="horizontal"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|top">
 
                 <TextView
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/fullBookTitle"
                     android:textSize="@dimen/head_line"
@@ -55,7 +55,7 @@
 
 
                 <TextView
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/fullBookDesc"
                     android:ellipsize="end"
@@ -67,7 +67,7 @@
 
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/fullBookDesc"
                     android:layout_marginTop="10dp"

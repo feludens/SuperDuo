@@ -4,8 +4,8 @@
 
     <RelativeLayout
         android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal|top">
 
         <LinearLayout
@@ -94,7 +94,7 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="50dip"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
@@ -102,7 +102,7 @@
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
                 android:text="@string/cancel_button"
                 android:layout_weight="1"
                 style="?android:attr/buttonBarButtonStyle"
@@ -113,7 +113,7 @@
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
                 android:text="@string/ok_button"
                 android:visibility="invisible"
                 android:layout_weight="1"
