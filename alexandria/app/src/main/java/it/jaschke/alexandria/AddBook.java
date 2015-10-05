@@ -131,6 +131,8 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
 
         if(savedInstanceState!=null){
             ean.setText(savedInstanceState.getString(EAN_CONTENT));
+            // The below check was added to avoid clearing the hint text when the user changes orientation
+            // but has not yet entered any text on the ISBN edit text.
             if(!ean.getText().toString().isEmpty()){
                 ean.setHint("");
             }

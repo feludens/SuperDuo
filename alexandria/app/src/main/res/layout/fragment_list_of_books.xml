@@ -17,7 +17,9 @@
             android:layout_alignParentRight="true"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_marginTop="5dp"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"/>
 
         <EditText
             android:layout_width = "match_parent"
