@@ -27,7 +27,9 @@
                 android:textIsSelectable="false"
                 android:maxLength="@integer/ean_size"
                 android:hint="@string/input_hint"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textColorHint="#000000"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -35,7 +37,8 @@
                 android:text="@string/scan_button"
                 android:id="@+id/scan_button"
                 android:layout_marginLeft="23dp"
-                android:layout_marginStart="23dp"/>
+                android:layout_marginStart="23dp"
+                android:textColor="#000000"/>
         </LinearLayout>
 
         <TextView
@@ -45,9 +48,7 @@
             android:textSize="@dimen/head_line"
             android:textIsSelectable="true"
             android:textStyle="bold"
-            android:layout_below="@+id/scan_button"
-            android:layout_alignLeft="@+id/ean"
-            android:layout_alignStart="@+id/ean"
+            android:layout_below="@+id/eancontainer"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"/>

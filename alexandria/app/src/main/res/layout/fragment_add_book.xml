@@ -30,14 +30,16 @@
                 android:hint="@string/input_hint"
                 android:paddingRight="20dp"
                 android:paddingEnd="20dp"
-                android:focusableInTouchMode="true"/>
+                android:focusableInTouchMode="true"
+                android:textColor="#000000"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="@string/scan_button"
-                android:id="@+id/scan_button"/>
+                android:id="@+id/scan_button"
+                android:textColor="#000000"/>
 
         </LinearLayout>
 
