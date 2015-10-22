@@ -11,14 +11,25 @@ public class MainActivity extends ActionBarActivity
 {
     public static int selected_match_id;
     public static int current_fragment = 2;
-    public static String LOG_TAG = "MainActivity";
+    public final String LOG_TAG = this.getClass().getSimpleName();
     private final String save_tag = "Save Test";
     private PagerFragment my_main;
+    private String myMain;
+    private String selectedId;
+    private String fragment;
+    private String pagerCurrent;
+    private String selectedMatch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(LOG_TAG, "Reached MainActivity onCreate");
+        myMain = this.getString(R.string.my_main);
+        selectedId = this.getString(R.string.selected_id);
+        fragment = this.getString(R.string.fragment);
+        pagerCurrent = this.getString(R.string.pager_current);
+        selectedMatch = this.getString(R.string.selected_match);
+        Log.d(LOG_TAG, this.getString(R.string.main_activity_created));
         if (savedInstanceState == null) {
             my_main = new PagerFragment();
             getSupportFragmentManager().beginTransaction()
@@ -56,24 +67,24 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onSaveInstanceState(Bundle outState)
     {
-        Log.v(save_tag,"will save");
-        Log.v(save_tag,"fragment: "+String.valueOf(my_main.mPagerHandler.getCurrentItem()));
-        Log.v(save_tag,"selected id: "+selected_match_id);
-        outState.putInt("Pager_Current",my_main.mPagerHandler.getCurrentItem());
-        outState.putInt("Selected_match",selected_match_id);
-        getSupportFragmentManager().putFragment(outState,"my_main",my_main);
+        Log.v(save_tag, this.getString(R.string.will_save));
+        Log.v(save_tag, fragment + String.valueOf(my_main.mPagerHandler.getCurrentItem()));
+        Log.v(save_tag, selectedId + selected_match_id);
+        outState.putInt(this.getString(R.string.pager_current),my_main.mPagerHandler.getCurrentItem());
+        outState.putInt(selectedMatch ,selected_match_id);
+        getSupportFragmentManager().putFragment(outState,myMain,my_main);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState)
     {
-        Log.v(save_tag,"will retrive");
-        Log.v(save_tag,"fragment: "+String.valueOf(savedInstanceState.getInt("Pager_Current")));
-        Log.v(save_tag,"selected id: "+savedInstanceState.getInt("Selected_match"));
-        current_fragment = savedInstanceState.getInt("Pager_Current");
-        selected_match_id = savedInstanceState.getInt("Selected_match");
-        my_main = (PagerFragment) getSupportFragmentManager().getFragment(savedInstanceState,"my_main");
+        Log.v(save_tag, this.getString(R.string.will_retrive));
+        Log.v(save_tag, fragment + String.valueOf(savedInstanceState.getInt(pagerCurrent)));
+        Log.v(save_tag, selectedId + savedInstanceState.getInt(selectedMatch));
+        current_fragment = savedInstanceState.getInt(pagerCurrent);
+        selected_match_id = savedInstanceState.getInt(selectedMatch);
+        my_main = (PagerFragment) getSupportFragmentManager().getFragment(savedInstanceState, myMain);
         super.onRestoreInstanceState(savedInstanceState);
     }
 }

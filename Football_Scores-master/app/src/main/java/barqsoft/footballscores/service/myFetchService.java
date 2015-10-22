@@ -28,12 +28,14 @@ import barqsoft.footballscores.R;
 /**
  * Created by yehya khaled on 3/2/2015.
  */
-public class myFetchService extends IntentService
+public class MyFetchService extends IntentService
 {
-    public static final String LOG_TAG = "myFetchService";
-    public myFetchService()
+    public static final String UPDATE_WIDGET_BROADCAST = "barqsoft.footballscores.UPDATE_WIDGET_BROADCAST";
+
+    public static final String LOG_TAG = "MyFetchService";
+    public MyFetchService()
     {
-        super("myFetchService");
+        super("MyFetchService");
     }
 
     @Override
@@ -266,6 +268,10 @@ public class myFetchService extends IntentService
                     DatabaseContract.BASE_CONTENT_URI,insert_data);
 
             //Log.v(LOG_TAG,"Succesfully Inserted : " + String.valueOf(inserted_data));
+
+            if (inserted_data > 0) {
+                sendBroadcast(new Intent(UPDATE_WIDGET_BROADCAST).setPackage(getPackageName()));
+            }
         }
         catch (JSONException e)
         {
