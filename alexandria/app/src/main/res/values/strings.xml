@@ -28,4 +28,5 @@
     <!-- About -->
     <string name="about_text">This application gets book information such as titles, cover images, and author information and allows
     user to create their personalized book list by either entering a book\'s ISBN or scanning a barcode.</string>
+    <string name="unknown_author">Unknown Author</string>
 </resources>
