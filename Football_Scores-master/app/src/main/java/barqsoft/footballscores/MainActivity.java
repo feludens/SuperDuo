@@ -24,6 +24,7 @@ public class MainActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Utilies.setContext(this);
         myMain = this.getString(R.string.my_main);
         selectedId = this.getString(R.string.selected_id);
         fragment = this.getString(R.string.fragment);
