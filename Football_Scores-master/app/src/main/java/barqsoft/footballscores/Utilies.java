@@ -1,5 +1,7 @@
 package barqsoft.footballscores;
 
+import android.content.Context;
+
 /**
  * Created by yehya khaled on 3/3/2015.
  */
@@ -10,16 +12,18 @@ public class Utilies
     public static final int CHAMPIONS_LEAGUE = 362;
     public static final int PRIMERA_DIVISION = 358;
     public static final int BUNDESLIGA = 351;
+    public static Context context;
+
     public static String getLeague(int league_num)
     {
         switch (league_num)
         {
-            case SERIE_A : return "Seria A";
-            case PREMIER_LEGAUE : return "Premier League";
-            case CHAMPIONS_LEAGUE : return "UEFA Champions League";
-            case PRIMERA_DIVISION : return "Primera Division";
-            case BUNDESLIGA : return "Bundesliga";
-            default: return "Not known League Please report";
+            case SERIE_A : return context.getResources().getString(R.string.seriaa);
+            case PREMIER_LEGAUE : return context.getResources().getString(R.string.premierleague);
+            case CHAMPIONS_LEAGUE : return context.getResources().getString(R.string.champions_league);
+            case PRIMERA_DIVISION : return context.getResources().getString(R.string.primeradivison);
+            case BUNDESLIGA : return context.getResources().getString(R.string.bundesliga);
+            default: return context.getResources().getString(R.string.not_known_league);
         }
     }
     public static String getMatchDay(int match_day,int league_num)
@@ -28,28 +32,29 @@ public class Utilies
         {
             if (match_day <= 6)
             {
-                return "Group Stages, Matchday : 6";
+                return context.getResources().getString(R.string.group_stage_text)
+                        + ", " + context.getResources().getString(R.string.match_day) + ": 6";
             }
             else if(match_day == 7 || match_day == 8)
             {
-                return "First Knockout round";
+                return context.getResources().getString(R.string.first_knockout_round);
             }
             else if(match_day == 9 || match_day == 10)
             {
-                return "QuarterFinal";
+                return context.getResources().getString(R.string.quarter_final);
             }
             else if(match_day == 11 || match_day == 12)
             {
-                return "SemiFinal";
+                return context.getResources().getString(R.string.semi_final);
             }
             else
             {
-                return "Final";
+                return context.getResources().getString(R.string.final_text);
             }
         }
         else
         {
-            return "Matchday : " + String.valueOf(match_day);
+            return context.getResources().getString(R.string.match_day) + ": " + String.valueOf(match_day);
         }
     }
 
@@ -80,8 +85,12 @@ public class Utilies
             case "Tottenham Hotspur FC" : return R.drawable.tottenham_hotspur;
             case "West Bromwich Albion" : return R.drawable.west_bromwich_albion_hd_logo;
             case "Sunderland AFC" : return R.drawable.sunderland;
-            case "Stoke City FC" : return R.drawable.stoke_city;
+            case "Stoke City FC": return R.drawable.stoke_city;
             default: return R.drawable.ball;
         }
+    }
+
+    public void setContext(MainActivity context) {
+        this.context = context;
     }
 }
